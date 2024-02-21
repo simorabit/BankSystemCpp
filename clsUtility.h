@@ -25,18 +25,18 @@ class clsUtil
         return randNum;
     }
 
-    static char GetRandomCharacter(enCharType CharType)
+       static char GetRandomCharacter(enCharType CharType)
     {
+       
+       //updated this method to accept mixchars
+       if (CharType == MixChars)
+       {
+          //Capital/Samll/Digits only
+           CharType = (enCharType)RandomNumber(1,3);
 
-        //updated this method to accept mixchars
-        if (CharType == MixChars)
-        {
-            //Capital/Samll/Digits only
-            CharType = (enCharType)RandomNumber(1, 3);
+       }
 
-        }
-
-        switch (CharType)
+       switch (CharType)
         {
 
         case enCharType::SamallLetter:
